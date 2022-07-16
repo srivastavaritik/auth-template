@@ -132,4 +132,11 @@ a {
   color: #999999;
   line-height: 0;
 }
- 
+ @media only screen and (max-width: 500px) {
+  .cont2{
+    display: none;
+  }
+  .cont1{
+    width: 100%;
+  }
+}
