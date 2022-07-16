@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card/Card";
 import "./Form.css";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import saly from "../assets/Saly.png";
 import fb from '../assets/fb.png'
 import apple from '../assets/apple.png'
 import google from '../assets/google.png'
-
+import phone from '../assets/phone.svg'
 const Login = () => {
   return (
     <Card className="login__card">
@@ -25,15 +26,15 @@ const Login = () => {
           <form>
             <p className="login__input-title">Email</p>
             <input
-              className="login__input"
+              className="login__input FontAwesome"
               type="email"
-              placeholder="Enter your email address"
+              placeholder="&#xF0e0; Enter your email address"
             />
             <p className="login__input-title">Password</p>
             <input
               className="login__input"
               type="password"
-              placeholder="Enter your Password"
+              placeholder="&#xf023; Enter your Password"
             />
             <div className="flex">
               <div>
@@ -44,7 +45,7 @@ const Login = () => {
               </div>
               <div>
                 <p className="login__input-rempass">
-                  <Link to='/forgot-password'>Forgot Password?</Link>
+                  <Link to="/forgot-password">Forgot Password?</Link>
                 </p>
               </div>
             </div>
@@ -68,7 +69,9 @@ const Login = () => {
         </div>
       </div>
       <div className="cont2">
-        <p className="login__phone">+88 596 782 483</p>
+        <p className="login__phone">
+         📞 +88 596 782 483
+        </p>
         <img src={saly} alt="" className="login__image" />
         <div className="login__signin">
           <h1>Sign in to name</h1>

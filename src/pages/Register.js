@@ -24,34 +24,34 @@ const Register = () => {
             <input
               className="login__input"
               type="email"
-              placeholder="Enter your email address"
+              placeholder="&#xF0e0; Enter your email address"
             />
             <p className="reg__input-title">Username</p>
             <input
               className="login__input"
               type="text"
-              placeholder="Enter your User name"
+              placeholder=" &#xF007; Enter your User name"
             />
             <p className="reg__input-title">Password</p>
             <input
               className="login__input"
               type="password"
-              placeholder="Enter your Password"
+              placeholder="&#xF023; Enter your Password"
             />
             <p className="reg__input-title">Confirm Password</p>
             <input
               className="login__input"
               type="password"
-              placeholder="Confirm your Password"
+              placeholder="&#xf023; Confirm your Password"
             />
-            
+
             <button className="form-button">Register</button>
             <br />
           </form>
         </div>
       </div>
       <div className="cont2">
-        <p className="login__phone">+88 596 782 483</p>
+        <p className="login__phone">📞+88 596 782 483</p>
         <img src={saly} alt="" className="login__image" />
         <div className="login__signin">
           <h1>Sign up to name</h1>

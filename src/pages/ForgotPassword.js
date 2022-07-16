@@ -11,7 +11,7 @@ const ForgotPassword = () => {
         <h3>Your Logo</h3>
         <div className="login__form">
           <h2>Reset Your Password</h2>
-          
+
           <p>If you don’t have an account.</p>
           <p>
             You can{" "}
@@ -31,7 +31,7 @@ const ForgotPassword = () => {
             <input
               className="login__input"
               type="email"
-              placeholder="Enter your email address"
+              placeholder="&#xF0e0; Enter your email address"
             />
             <button className="form-button">Get Password</button>
             <br />
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
         </div>
       </div>
       <div className="cont2">
-        <p className="login__phone">+88 596 782 483</p>
+        <p className="login__phone">📞+88 596 782 483</p>
         <img src={saly} alt="" className="login__image" />
         <div className="login__signin">
           <h1>Forgot Password?!</h1>

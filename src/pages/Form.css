@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap");
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 .cont1 {
   width: 45%;
 }
@@ -25,7 +26,7 @@ h3 {
   font-family: "Poppins";
   color: white;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: .8rem;
   float: right;
   margin-right: 1rem;
 }
@@ -88,6 +89,8 @@ a {
   position: absolute;
   bottom: 20%;
   top: 25%;
+  font-family: 'FontAwesome','Poppins';
+  vertical-align: middle;
 }
 .login__input-title {
   margin-top: 3rem;
@@ -129,3 +132,4 @@ a {
   color: #999999;
   line-height: 0;
 }
+ 
