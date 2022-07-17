@@ -12,20 +12,20 @@ const ForgotPassword = () => {
         <div className="login__form">
           <h2>Reset Your Password</h2>
 
-          <p>If you don’t have an account.</p>
           <p>
-            You can{" "}
+            Don't have an account -{" "}
             <span className="bold">
-              <Link to="/register">Register here !</Link>
+              <Link to="/register">Register here!</Link>
             </span>
           </p>
           <p>
-            Or, you can{" "}
+            Already have an account -{" "}
             <span className="bold">
-              <Link to="/">login here!</Link>
+              <Link to="/">Login here!</Link>
             </span>
           </p>
-
+          <br/>
+          <p>Forgot Password?</p>
           <form>
             <p className="login__input-title">Email</p>
             <input
