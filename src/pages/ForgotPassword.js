@@ -13,13 +13,13 @@ const ForgotPassword = () => {
           <h2>Reset Your Password</h2>
 
           <p>
-            Don't have an account -{" "}
+            Don't have an account? -{" "}
             <span className="bold">
               <Link to="/register">Register here!</Link>
             </span>
           </p>
           <p>
-            Already have an account -{" "}
+            Already have an account? -{" "}
             <span className="bold">
               <Link to="/">Login here!</Link>
             </span>
