@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card/Card";
 import "./Form.css";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import saly from "../assets/Saly.png";
-import fb from '../assets/fb.png'
-import apple from '../assets/apple.png'
-import google from '../assets/google.png'
-import phone from '../assets/phone.svg'
+import fb from "../assets/fb.png";
+import apple from "../assets/apple.png";
+import google from "../assets/google.png";
+import { setupWorker, rest } from "msw";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const emailHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  const passwordHandler = (e) => {
+    setPassword(e.target.value);
+  };
+  const worker = setupWorker(
+    rest.post("http://localhost:5000/api/login", (req, res, ctx) => {
+
+      return res(
+        ctx.json({
+          email: email,
+          password: password,
+        })
+      );
+    })
+  );
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log({ email, password });
+    worker.start();
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <Card className="login__card">
       <div className="cont1">
@@ -23,15 +50,19 @@ const Login = () => {
             </span>
           </p>
 
-          <form>
+          <form onSubmit={formSubmitHandler}>
             <p className="login__input-title">Email</p>
             <input
+              value={email}
+              onChange={emailHandler}
               className="login__input FontAwesome"
               type="email"
               placeholder="&#xF0e0; Enter your email address"
             />
             <p className="login__input-title">Password</p>
             <input
+              value={password}
+              onChange={passwordHandler}
               className="login__input"
               type="password"
               placeholder="&#xf023; Enter your Password"
@@ -49,7 +80,9 @@ const Login = () => {
                 </p>
               </div>
             </div>
-            <button className="form-button">Login</button>
+            <button className="form-button" type="submit">
+              Login
+            </button>
             <div className="text-center">
               <p className="login__input-rempass">or continue with</p>
             </div>
@@ -69,9 +102,7 @@ const Login = () => {
         </div>
       </div>
       <div className="cont2">
-        <p className="login__phone">
-         📞 +88 596 782 483
-        </p>
+        <p className="login__phone">📞 +88 596 782 483</p>
         <img src={saly} alt="" className="login__image" />
         <div className="login__signin">
           <h1>Sign in to name</h1>

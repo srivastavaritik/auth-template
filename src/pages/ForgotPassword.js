@@ -1,10 +1,33 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import Card from '../components/Card/Card';
-import saly from '../assets/Saly.png'
-import './Form.css'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { setupWorker, rest } from "msw";
+import Card from "../components/Card/Card";
+import saly from "../assets/Saly.png";
+import "./Form.css";
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+
+  const emailHandler = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const worker = setupWorker(
+    rest.post("http://localhost:5000/api/login", (req, res, ctx) => {
+      return res(
+        ctx.json({
+          email: email,
+        })
+      );
+    })
+  );
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log({email});
+    worker.start();
+    setEmail("");
+  };
+
   return (
     <Card className="login__card">
       <div className="cont1">
@@ -24,16 +47,18 @@ const ForgotPassword = () => {
               <Link to="/">Login here!</Link>
             </span>
           </p>
-          <br/>
+          <br />
           <p>Forgot Password?</p>
-          <form>
+          <form onSubmit={formSubmitHandler}>
             <p className="login__input-title">Email</p>
             <input
+            value={email}
+            onChange={emailHandler}
               className="login__input"
               type="email"
               placeholder="&#xF0e0; Enter your email address"
             />
-            <button className="form-button">Get Password</button>
+            <button className="form-button" type="submit">Get Password</button>
             <br />
           </form>
         </div>
@@ -48,6 +73,6 @@ const ForgotPassword = () => {
       </div>
     </Card>
   );
-}
+};
 
-export default ForgotPassword
+export default ForgotPassword;
