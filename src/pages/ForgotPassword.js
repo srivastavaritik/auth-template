@@ -36,12 +36,7 @@ const ForgotPassword = () => {
         <div className="login__form">
           <h2>Reset Your Password</h2>
 
-          <p>
-            Don't have an account? -{" "}
-            <span className="bold">
-              <Link to="/register">Register here!</Link>
-            </span>
-          </p>
+          
           <p>
             Already have an account? -{" "}
             <span className="bold">
