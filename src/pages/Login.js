@@ -18,9 +18,9 @@ const Login = () => {
     setPassword(e.target.value);
   };
   const worker = setupWorker(
-    rest.post("http://localhost:5000/api/login", (req, res, ctx) => {
-
+    rest.post("http://localhost:3000/api/login", (req, res, ctx) => {
       return res(
+        ctx.status(200),
         ctx.json({
           email: email,
           password: password,
@@ -50,7 +50,7 @@ const Login = () => {
             </span>
           </p>
 
-          <form onSubmit={formSubmitHandler}>
+          <form method='post' onSubmit={formSubmitHandler}>
             <p className="login__input-title">Email</p>
             <input
               value={email}

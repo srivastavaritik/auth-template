@@ -15,6 +15,7 @@ const ForgotPassword = () => {
   const worker = setupWorker(
     rest.post("http://localhost:5000/api/login", (req, res, ctx) => {
       return res(
+        ctx.status(200),
         ctx.json({
           email: email,
         })

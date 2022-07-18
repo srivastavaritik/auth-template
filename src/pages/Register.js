@@ -31,6 +31,7 @@ const Register = () => {
   const worker = setupWorker(
     rest.post("http://localhost:5000/api/register", (req, res, ctx) => {
       return res(
+        ctx.status(200),
         ctx.json({
           username: username,
           email: email,
