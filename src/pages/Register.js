@@ -60,7 +60,6 @@ const Register = () => {
         <h3>Your Logo</h3>
         <div className="login__form">
           <h2>Sign up</h2>
-          <p>If you already have an account register</p>
           <p>
             You can{" "}
             <span className="bold">
